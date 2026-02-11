@@ -14,7 +14,7 @@ export default function ContactPage() {
 
         try {
             const res = await fetch(
-                "http://localhost:5000/contact", // local backend
+                `${process.env.NEXT_PUBLIC_API_URL}/contact`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -38,9 +38,9 @@ export default function ContactPage() {
    
 
     return (
-        <div className="min-h-screen sm: flex flex-col items-center justify-center bg-[#fffaf5] px-4">
+        <div className="min-h-screen flex flex-col items-center bg-[#fffaf5] px-4 pt-10">
 
-            <h1 className="text-4xl font-bold text-center mb-2 text-[#043042]">
+            <h1 className="text-[45px] font-bold text-center mb-2 text-[#043042]">
                 Contact <span className="text-orange-500">Us</span>
             </h1>
             <div className="w-full max-w-xl rounded-2xl border border-orange-400 p-8 shadow-sm bg-white">
@@ -103,25 +103,3 @@ export default function ContactPage() {
         </div>
     )
 }
-
-
-
-
-//"use client"
-//import { useActionState } from "react"
-//import { createContact } from "./actions"
-//export default function ContactPage() {
-//    const [state, formAction] = useActionState(createContact, null)
-//    return (
-//        <form action={formAction}>
-//            <input name="name" required />
-//            <input name="phone" required />
-//            <input name="location" />
-//            <input name="pageUrl" />
-//            <textarea name="message" required />
-//            <button type="submit">Send</button>
-//            {state?.error && <p>{state.error}</p>}
-//            {state?.success && <p>Saved</p>}
-//        </form>
-//    )
-//}

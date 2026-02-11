@@ -15,7 +15,7 @@ const Navbar = () => {
 
         <div className='w-full flex justify-between h-20 items-center bg-[#043042]'>
             <div className='flex items-center p-1' >
-                <img src="/logo.png" className=' px-2 fixed h-auto max-w-[100px] md:max-w-[120px] lg:max-w-[170px]' alt="logo" />
+                <img src="/logo.png" className="px-4 lg:ml-10 fixed h-auto w-[180px] sm:w-[250px] md:w-[260px] lg:w-[290px]" alt="logo" />
             </div>
 
             <button
@@ -27,27 +27,54 @@ const Navbar = () => {
 
             <div className='hidden lg:block w-[50%] h-full'>
                 <ul className="w-full h-full flex gap-6 items-center justify-center text-xl font-medium text-zinc-100">
-                    <li className="cursor-pointer hover:text-amber-500 border-b-2 border-transparent hover:border-orange-500">
-                        <Link
-                            href="/"
-                        >
-                            <Home />
-                        </Link>
-                    </li>
-                    <li className="cursor-pointer hover:text-amber-500 hover:underline hover:decoration-2 hover:decoration-orange-500">
-                        Trending Hashtags
-                    </li>
-                    <li className="cursor-pointer hover:text-amber-500 hover:underline hover:decoration-2 hover:decoration-orange-500">
-                        Banned Hashtags
-                    </li>
-                    <li className="cursor-pointer hover:text-amber-500 hover:underline hover:decoration-2 hover:decoration-orange-500">
-                        Couple Hashtags
-                    </li>
+                    <li className="cursor-pointer group">
+					  <Link href="/" className="relative inline-block">
+						<Home />
+						<span className="absolute left-0 -bottom-1 w-0 h-[2px] 
+						  bg-gradient-to-r from-[#FACA15] to-[#EA5A0C] 
+						  transition-all duration-300 group-hover:w-full" />
+					  </Link>
+					</li>
+
+					<li className="cursor-pointer relative group">
+					  <span className="transition-all duration-300 group-hover:bg-gradient-to-r 
+						group-hover:from-[#FACA15] group-hover:to-[#EA5A0C] 
+						group-hover:bg-clip-text group-hover:text-transparent">
+						Trending Hashtags
+					  </span>
+					  <span className="absolute left-0 -bottom-1 w-0 h-[2px] 
+						bg-gradient-to-r from-[#FACA15] to-[#EA5A0C] 
+						transition-all duration-300 group-hover:w-full" />
+					</li>
+
+					<li className="cursor-pointer relative group">
+					  <span className="transition-all duration-300 group-hover:bg-gradient-to-r 
+						group-hover:from-[#FACA15] group-hover:to-[#EA5A0C] 
+						group-hover:bg-clip-text group-hover:text-transparent">
+						Banned Hashtags
+					  </span>
+					  <span className="absolute left-0 -bottom-1 w-0 h-[2px] 
+						bg-gradient-to-r from-[#FACA15] to-[#EA5A0C] 
+						transition-all duration-300 group-hover:w-full" />
+					</li>
+
+					<li className="cursor-pointer relative group">
+					  <span className="transition-all duration-300 group-hover:bg-gradient-to-r 
+						group-hover:from-[#FACA15] group-hover:to-[#EA5A0C] 
+						group-hover:bg-clip-text group-hover:text-transparent">
+						Couple Hashtags
+					  </span>
+					  <span className="absolute left-0 -bottom-1 w-0 h-[2px] 
+						bg-gradient-to-r from-[#FACA15] to-[#EA5A0C] 
+						transition-all duration-300 group-hover:w-full" />
+					</li>
 
 
 
                     {/* MORE DROPDOWN */}
-                    <li className="relative">
+                    <li className="absolute left-0 -bottom-1 w-0 h-[2px] 
+        bg-gradient-to-r from-[#FACA15] to-[#EA5A0C] 
+        transition-all duration-300 group-hover:w-full">
                         <button
                             onClick={() => setOpen(!open)}
                             className="flex items-center gap-1 hover:text-amber-500"
@@ -62,6 +89,7 @@ const Navbar = () => {
                             <div className="absolute right-0 mt-4 w-64 bg-[#043042] text-white rounded-md shadow-lg overflow-hidden">
                                 <Link
                                     href="/contact"
+									onClick={() => setOpen(false)}
                                     className="block px-6 py-4 text-xl text-orange-400 hover:bg-[#032530]"
                                 >
                                     Contact Us
@@ -116,31 +144,31 @@ const Navbar = () => {
                         </Link>
                     </li>
 
-                    <span className="h-px bg-orange-400 mx-4" />
+                    <span className="h-[1px] bg-orange-400 mx-4" />
 
                     <li className="px-6 py-3 hover:text-amber-400 cursor-pointer">
                         Banned Hashtags
                     </li>
 
-                    <span className="h-px bg-orange-400 mx-4" />
+                    <span className="h-[1px] bg-orange-400 mx-4" />
 
                     <li className="px-6 py-3 hover:text-amber-400 cursor-pointer">
                         Couple Hashtags
                     </li>
 
-                    <span className="h-px bg-orange-400 mx-4" />
+                    <span className="h-[1px] bg-orange-400 mx-4" />
 
                     <li className="px-6 py-3 hover:text-amber-400 cursor-pointer">
                         Trending Hashtags
                     </li>
 
-                    <span className="h-px bg-orange-400 mx-4" />
+                    <span className="h-[1px] bg-orange-400 mx-4" />
 
                     <li className="px-6 py-3 hover:text-amber-400 cursor-pointer">
                         Blogs
                     </li>
 
-                    <span className="h-px bg-orange-400 mx-4" />
+                    <span className="h-[1px] bg-orange-400 mx-4" />
 
                     <li className="px-6 py-3 hover:text-amber-400 cursor-pointer">
                         <Link
